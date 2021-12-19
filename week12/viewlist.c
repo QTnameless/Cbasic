@@ -12,7 +12,7 @@ void view_list(song_t** list, size_t n) {
     scanf("%d", &choice1);
 
     // execute input
-    switch(choice1) {
+    switch (choice1) {
         case 1: {
             qsort(*list, n, sizeof(song_t), cmp_name);
             break;

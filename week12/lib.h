@@ -11,27 +11,27 @@ typedef struct song {
     int year;
 } song_t;
 
-int cmp_name(const void *a, const void *b) {
-    song_t* song_a = (song_t*) a;
-    song_t* song_b = (song_t*) b;
+int cmp_name(const void* a, const void* b) {
+    song_t* song_a = (song_t*)a;
+    song_t* song_b = (song_t*)b;
     return strcmp(song_a->name, song_b->name);
 }
 
-int cmp_singer(const void *a, const void *b) {
-    song_t* song_a = (song_t*) a;
-    song_t* song_b = (song_t*) b;
+int cmp_singer(const void* a, const void* b) {
+    song_t* song_a = (song_t*)a;
+    song_t* song_b = (song_t*)b;
     return strcmp(song_a->singer, song_b->singer);
 }
 
-int cmp_composer(const void *a, const void *b) {
-    song_t* song_a = (song_t*) a;
-    song_t* song_b = (song_t*) b;
+int cmp_composer(const void* a, const void* b) {
+    song_t* song_a = (song_t*)a;
+    song_t* song_b = (song_t*)b;
     return strcmp(song_a->composer, song_b->composer);
 }
 
-int cmp_year(const void *a, const void *b) {
-    song_t* song_a = (song_t*) a;
-    song_t* song_b = (song_t*) b;
+int cmp_year(const void* a, const void* b) {
+    song_t* song_a = (song_t*)a;
+    song_t* song_b = (song_t*)b;
     return song_a->year - song_b->year;
 }
 

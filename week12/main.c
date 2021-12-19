@@ -1,7 +1,7 @@
+#include "add_song.c"
 #include "filter.c"
 #include "lib.h"
 #include "viewlist.c"
-#include "add_song.c"
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {
