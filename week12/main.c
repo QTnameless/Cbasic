@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
         list[n].name = strdup(name);
         list[n].singer = strdup(singer);
         list[n].composer = strdup(composer);
-        list[n].year = atoi(strtok(NULL, "\n") + 2);
+        list[n].year = atoi(strtok(NULL, "#*#"));
         n++;
     }
     rewind(f);
