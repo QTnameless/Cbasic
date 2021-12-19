@@ -54,9 +54,9 @@ int main(int argc, char* argv[]) {
 
             case 3: {
                 printf("%d\n", n);
-                char* name_3;
-                char* singer_3;
-                char* composer_3;
+                char name_3[100];
+                char singer_3[100];
+                char composer_3[100];
                 int year_3;
                 add_song(list, &n, name_3, singer_3, composer_3, &year_3);
                 printf("%d - %s %d\n", n, list[n - 1].name, list[n - 1].year);
@@ -77,5 +77,6 @@ int main(int argc, char* argv[]) {
 
         printf("\n");
     }
+    fclose(f);
     return 0;
 }
