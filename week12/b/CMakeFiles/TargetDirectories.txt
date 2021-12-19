@@ -1,0 +1,3 @@
+/home/milo/Cbasic/week12/b/CMakeFiles/rebuild_cache.dir
+/home/milo/Cbasic/week12/b/CMakeFiles/edit_cache.dir
+/home/milo/Cbasic/week12/b/CMakeFiles/prog.dir
