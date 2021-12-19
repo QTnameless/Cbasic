@@ -1,6 +1,6 @@
 #include "lib.h"
 
-void view_list(song_t* list, size_t n) {
+void view_list(song_t** list, size_t n) {
     // print sub menu
     printf("\nSắp xếp theo thuộc tính:\n");
     printf("1. Tên bài hát\n");
@@ -14,22 +14,22 @@ void view_list(song_t* list, size_t n) {
     // execute input
     switch(choice1) {
         case 1: {
-            qsort(list, n, sizeof(song_t), cmp_name);
+            qsort(*list, n, sizeof(song_t), cmp_name);
             break;
         }
 
         case 2: {
-            qsort(list, n, sizeof(song_t), cmp_singer);
+            qsort(*list, n, sizeof(song_t), cmp_singer);
             break;
         }
 
         case 3: {
-            qsort(list, n, sizeof(song_t), cmp_composer);
+            qsort(*list, n, sizeof(song_t), cmp_composer);
             break;
         }
 
         case 4: {
-            qsort(list, n, sizeof(song_t), cmp_year);
+            qsort(*list, n, sizeof(song_t), cmp_year);
             break;
         }
     }
@@ -37,8 +37,8 @@ void view_list(song_t* list, size_t n) {
     // print list
     printf("\n");
     int i = 0;
-    while (list[i].name != NULL) {
-        printf("%d. %s - %s - %s - %d\n", i + 1, list[i].name, list[i].singer, list[i].composer, list[i].year);
+    while ((*list)[i].name != NULL) {
+        printf("%d. %s - %s - %s - %d\n", i + 1, (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
         i++;
     }
 }

@@ -43,7 +43,7 @@ int main(int argc, char* argv[]) {
         // execute input
         switch (choice0) {
             case 1: {
-                view_list(list, n);
+                view_list(&list, n);
                 break;
             }
 
@@ -58,9 +58,11 @@ int main(int argc, char* argv[]) {
                 char singer_3[100];
                 char composer_3[100];
                 int year_3;
-                add_song(list, &n, name_3, singer_3, composer_3, &year_3);
+                add_song(&list, &n);
                 printf("%d - %s %d\n", n, list[n - 1].name, list[n - 1].year);
-                write_file(f, list);
+                printf("%d - %s %d\n", n, list[n - 1].name, list[n - 1].year);
+                write_file(f, &list);
+                printf("%d - %s %d\n", n, list[n - 1].name, list[n - 1].year);
                 printf("test\n");
                 break;
             }
