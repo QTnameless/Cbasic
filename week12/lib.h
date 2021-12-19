@@ -36,13 +36,13 @@ int cmp_year(const void *a, const void *b) {
 }
 
 void view_list(song_t** list, size_t n);
-void write_file(FILE* f, song_t** list) {
+void write_file(FILE** f, song_t** list) {
     int i = 0;
     while ((*list)[i + 1].name != NULL) {
-        fprintf(f, "%s#*#%s#*#%s#*#%d\n", (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
+        fprintf(*f, "%s#*#%s#*#%s#*#%d\n", (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
         i++;
     }
-    fprintf(f, "%s#*#%s#*#%s#*#%d", (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
+    fprintf(*f, "%s#*#%s#*#%s#*#%d", (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
 }
 
 #endif  // LIB_H_

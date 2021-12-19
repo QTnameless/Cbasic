@@ -54,15 +54,12 @@ int main(int argc, char* argv[]) {
 
             case 3: {
                 printf("%d\n", n);
-                char name_3[100];
-                char singer_3[100];
-                char composer_3[100];
+                char* name_3 = malloc(100);
+                char* singer_3 = malloc(100);
+                char* composer_3 = malloc(100);
                 int year_3;
-                add_song(&list, &n);
-                printf("%d - %s %d\n", n, list[n - 1].name, list[n - 1].year);
-                printf("%d - %s %d\n", n, list[n - 1].name, list[n - 1].year);
-                write_file(f, &list);
-                printf("%d - %s %d\n", n, list[n - 1].name, list[n - 1].year);
+                add_song(&list, &n, &name_3, &singer_3, &composer_3, &year_3);
+                write_file(&f, &list);
                 printf("test\n");
                 break;
             }
