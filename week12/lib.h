@@ -37,9 +37,9 @@ int cmp_year(const void* a, const void* b) {
 
 void view_list(song_t** list, size_t n);
 void print_list(song_t** list, size_t n);
-void write_file(FILE** f, song_t** list) {
+void write_file(FILE** f, song_t** list, size_t n) {
     int i = 0;
-    while ((*list)[i + 1].name != NULL) {
+    for (; i < n - 1;) {
         fprintf(*f, "%s#*#%s#*#%s#*#%d\n", (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
         i++;
     }

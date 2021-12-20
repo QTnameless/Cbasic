@@ -11,7 +11,6 @@ void add_song(song_t** list, int* n, char** name, char** singer, char** composer
     scanf("%d", year);
     *n += 1;
     *list = realloc(*list, *n * sizeof(struct song));
-    printf("test\n");
     (*list)[*n - 1].name = *name;
     (*list)[*n - 1].singer = *singer;
     (*list)[*n - 1].composer = *composer;

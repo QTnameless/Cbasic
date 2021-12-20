@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
                 char* composer_3 = malloc(100);
                 int year_3;
                 add_song(&list, &n, &name_3, &singer_3, &composer_3, &year_3);
-                write_file(&f, &list);
+                write_file(&f, &list, n);
                 rewind(f);
                 break;
             }
@@ -69,7 +69,7 @@ int main(int argc, char* argv[]) {
             case 4: {
                 delete (&list, &n);
                 freopen(argv[1], "w", f);
-                write_file(&f, &list);
+                write_file(&f, &list,n);
                 rewind(f);
                 break;
             }
