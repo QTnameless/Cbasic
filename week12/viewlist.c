@@ -35,6 +35,10 @@ void view_list(song_t** list, size_t n) {
     }
 
     // print list
+    print_list(list);
+}
+
+void print_list(song_t** list) {
     printf("\n");
     int i = 0;
     while ((*list)[i].name != NULL) {

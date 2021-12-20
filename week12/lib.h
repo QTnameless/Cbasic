@@ -36,6 +36,7 @@ int cmp_year(const void* a, const void* b) {
 }
 
 void view_list(song_t** list, size_t n);
+void print_list(song_t** list);
 void write_file(FILE** f, song_t** list) {
     int i = 0;
     while ((*list)[i + 1].name != NULL) {
@@ -44,5 +45,9 @@ void write_file(FILE** f, song_t** list) {
     }
     fprintf(*f, "%s#*#%s#*#%s#*#%d", (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
 }
+
+void filter(song_t **list, size_t n, song_t** tmp);
+void add_song(song_t** list, int* n, char** name, char** singer, char** composer, int* year);
+void delete(song_t** list, int* n);
 
 #endif  // LIB_H_

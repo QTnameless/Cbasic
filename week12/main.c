@@ -1,4 +1,5 @@
 #include "add_song.c"
+#include "delete.c"
 #include "filter.c"
 #include "lib.h"
 #include "viewlist.c"
@@ -48,23 +49,28 @@ int main(int argc, char* argv[]) {
             }
 
             case 2: {
-                filter(list, n);
+                song_t* tmp = malloc(n * sizeof(struct song));
+                filter(&list, n, &tmp);
+                print_list(&tmp);
                 break;
             }
 
             case 3: {
-                printf("%d\n", n);
                 char* name_3 = malloc(100);
                 char* singer_3 = malloc(100);
                 char* composer_3 = malloc(100);
                 int year_3;
                 add_song(&list, &n, &name_3, &singer_3, &composer_3, &year_3);
                 write_file(&f, &list);
-                printf("test\n");
+                rewind(f);
                 break;
             }
 
             case 4: {
+                delete (&list, &n);
+                freopen(argv[1], "w", f);
+                write_file(&f, &list);
+                rewind(f);
                 break;
             }
 
