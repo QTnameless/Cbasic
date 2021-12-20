@@ -3,7 +3,7 @@
 void delete (song_t** list, int* n) {
     song_t* tmp = malloc(*n * sizeof(struct song));
     filter(list, *n, &tmp);
-    print_list(&tmp, *n);
+    print_list(&tmp, sizeof(tmp) / sizeof(struct song));
     int num;
     printf("Nhập số thứ tự của bài hát bạn muốn xóa: ");
     scanf("%d", &num);
