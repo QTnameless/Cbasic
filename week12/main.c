@@ -52,6 +52,7 @@ int main(int argc, char* argv[]) {
                 song_t* tmp = malloc(n * sizeof(struct song));
                 filter(&list, n, &tmp);
                 print_list(&tmp);
+                free(tmp);
                 break;
             }
 
