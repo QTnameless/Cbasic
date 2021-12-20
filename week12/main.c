@@ -83,5 +83,8 @@ int main(int argc, char* argv[]) {
         printf("\n");
     }
     fclose(f);
+    free_list(&list);
+    free(list);
+    free(line);
     return 0;
 }

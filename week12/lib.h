@@ -50,4 +50,13 @@ void filter(song_t **list, size_t n, song_t** tmp);
 void add_song(song_t** list, int* n, char** name, char** singer, char** composer, int* year);
 void delete(song_t** list, int* n);
 
+void free_list(song_t** list) {
+    int i = 0;
+    while ((*list)[i].name != NULL) {
+        free((*list)[i].name);
+        free((*list)[i].singer);
+        free((*list)[i].composer);
+        i++;
+    }
+}
 #endif  // LIB_H_

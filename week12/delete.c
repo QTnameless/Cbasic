@@ -22,8 +22,11 @@ void delete(song_t** list, int* n) {
             i++;
         }
         *n -= 1;
-        (*list)[i].name = NULL;
+        free((*list)[i].name);
+        free((*list)[i].singer);
+        free((*list)[i].composer);
+        /* (*list)[i].name = NULL;
         (*list)[i].singer = NULL;
-        (*list)[i].composer = NULL;
+        (*list)[i].composer = NULL; */
     }
 }
