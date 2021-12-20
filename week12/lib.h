@@ -36,7 +36,7 @@ int cmp_year(const void* a, const void* b) {
 }
 
 void view_list(song_t** list, size_t n);
-void print_list(song_t** list);
+void print_list(song_t** list, size_t n);
 void write_file(FILE** f, song_t** list) {
     int i = 0;
     while ((*list)[i + 1].name != NULL) {

@@ -35,14 +35,11 @@ void view_list(song_t** list, size_t n) {
     }
 
     // print list
-    print_list(list);
+    print_list(list, n);
 }
 
-void print_list(song_t** list) {
-    printf("\n");
-    int i = 0;
-    while ((*list)[i].name != NULL) {
+void print_list(song_t** list, size_t n) {
+    for (int i = 0; i < n; i++) {
         printf("%d. %s - %s - %s - %d\n", i + 1, (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
-        i++;
     }
 }
