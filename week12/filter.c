@@ -1,38 +1,39 @@
 #include "lib.h"
 
-void add_tmp(song_t *list[], size_t n, int choice, void *ptr, song_t** tmp) {
+void add_tmp(song_t *list[], size_t n, int choice, void *ptr, song_t **tmp) {
     printf("\n");
-    int pos = 0;
+    int pos = 1;
     for (int i = 0; i < n; i++) {
         if (choice == 1) {
             if (strstr((*list)[i].name, (char *)ptr)) {
-                printf("%d. %s - %s - %s - %d\n", i + 1, (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
-                (*tmp)[pos] = (*list)[i];
+                printf("%d. %s - %s - %s - %d\n", pos, (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
+                (*tmp)[pos - 1] = (*list)[i];
                 pos++;
             }
         } else if (choice == 2) {
             if (strstr((*list)[i].singer, (char *)ptr)) {
-                printf("%d. %s - %s - %s - %d\n", i + 1, (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
-                (*tmp)[pos] = (*list)[i];
+                printf("%d. %s - %s - %s - %d\n", pos, (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
+                (*tmp)[pos - 1] = (*list)[i];
                 pos++;
             }
         } else if (choice == 3) {
             if (strstr((*list)[i].composer, (char *)ptr)) {
-                printf("%d. %s - %s - %s - %d\n", i + 1, (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
-                (*tmp)[pos] = (*list)[i];
+                printf("%d. %s - %s - %s - %d\n", pos, (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
+                (*tmp)[pos - 1] = (*list)[i];
                 pos++;
             }
         } else {
             if (*((int *)ptr) <= (*list)[i].year) {
-                printf("%d. %s - %s - %s - %d\n", i + 1, (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
-                (*tmp)[pos] = (*list)[i];
+                printf("%d. %s - %s - %s - %d\n", pos, (*list)[i].name, (*list)[i].singer, (*list)[i].composer, (*list)[i].year);
+                (*tmp)[pos - 1] = (*list)[i];
                 pos++;
             }
         }
     }
+    *tmp = realloc(*tmp, (pos - 1) * sizeof(struct song));
 }
 
-void filter(song_t *list[], size_t n, song_t** tmp) {
+void filter(song_t *list[], size_t n, song_t **tmp) {
     printf("\nLọc theo thuộc tính:\n");
     printf("1. Tên bài hát\n");
     printf("2. Ca sĩ\n");

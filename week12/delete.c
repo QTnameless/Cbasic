@@ -3,7 +3,6 @@
 void delete (song_t** list, int* n) {
     song_t* tmp = malloc(*n * sizeof(struct song));
     filter(list, *n, &tmp);
-    print_list(&tmp, sizeof(tmp) / sizeof(struct song));
     int num;
     printf("Nhập số thứ tự của bài hát bạn muốn xóa: ");
     scanf("%d", &num);
@@ -22,18 +21,12 @@ void delete (song_t** list, int* n) {
             free((*list)[i].singer);
             free((*list)[i].composer);
 
-            while ((*list)[i + 1].name != NULL) {
+            for (; i < *n - 1;) {
                 (*list)[i] = (*list)[i + 1];
                 i++;
             }
             *n -= 1;
-            free((*list)[i].name);
-            free((*list)[i].singer);
-            free((*list)[i].composer);
-            *list = realloc (*list, *n * sizeof(struct song));
-            /* (*list)[i].name = NULL;
-            (*list)[i].singer = NULL;
-            (*list)[i].composer = NULL; */
+            *list = realloc(*list, *n * sizeof(struct song));
         }
     }
 

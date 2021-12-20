@@ -69,7 +69,7 @@ int main(int argc, char* argv[]) {
             case 4: {
                 delete (&list, &n);
                 freopen(argv[1], "w", f);
-                write_file(&f, &list,n);
+                write_file(&f, &list, n);
                 rewind(f);
                 break;
             }
