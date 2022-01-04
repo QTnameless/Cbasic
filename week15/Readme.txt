@@ -1,0 +1,1 @@
+Câu lệnh biên dịch: gcc main.c -o prog -I cgen
